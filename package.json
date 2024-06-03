@@ -7,10 +7,14 @@
     "type-check": "tsc"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
     "@chakra-ui/react": "^2.8.2",
+    "@emotion/styled": "^11.11.5",
+    "framer-motion": "^11.2.10",
     "next": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.2.1"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",

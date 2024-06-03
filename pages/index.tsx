@@ -1,18 +1,17 @@
-import {Button, Checkbox, Flex, Heading, Input, useColorMode, useColorModeValue} from "@chakra-ui/react";
+import {Box, Button, Checkbox, Flex, Heading, Input, useColorModeValue} from "@chakra-ui/react";
 
 const IndexPage = () => {
-  
-  const {toggleColorMode} = useColorMode();
-  const formBackground = useColorModeValue("gray.100", "gray.700");
   return (
     <Flex height={"100vh"} alignItems={"center"} justifyContent={"center"} >
-      <Flex direction={"column"} background={formBackground} p={12} rounded={6}> 
-        <Heading mb={6}>Log in</Heading>
-        <Input placeholder={"example@mail.com"} variant={"filled"} mb={3} type={"email"}/>
-        <Input placeholder={"*******"} variant={"filled"} mb={6} type={"password"}/>
-        <Checkbox mb={3} colorScheme={"purple"}>Remember me?</Checkbox>
-        <Button colorScheme={"purple"} mb={3}>Submit</Button>
-      </Flex>
+      <Box boxShadow='base' p='6' rounded='md' background={useColorModeValue("white","#47556930")} >
+        <Flex direction={"column"} rounded={6} >
+          <Heading mb={6}>Log in</Heading>
+          <Input placeholder={"example@mail.com"} variant={"outline"} mb={3} type={"email"}/>
+          <Input placeholder={"*******"} variant={"outline"} mb={6} type={"password"}/>
+          <Checkbox mb={3} colorScheme={"gray"}>Remember me?</Checkbox>
+          <Button colorScheme={"gray"} mb={3}>Submit</Button>
+        </Flex>
+      </Box>
     </Flex>    
     );
   
