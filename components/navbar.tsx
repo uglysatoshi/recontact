@@ -71,13 +71,12 @@ const Navbar = props => {
                     pb={2}
                     pt={2}
                     maxW="container.xl"
-                    alignItems="center"
-                    justifyContent="space-between"
+                    align="center"
+                    justify="space-between"
                 >
                     <Flex align="center" >
                         <Heading as="h1" size="lg" letterSpacing={'tighter'}>
                             <Logo />
-
                         </Heading>
                     </Flex>
 
