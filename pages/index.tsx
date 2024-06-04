@@ -1,4 +1,4 @@
-import {Box, Button, Checkbox, Flex, Heading, Input, useColorModeValue} from "@chakra-ui/react";
+import {Box, Button, Checkbox, Flex, Heading, Input, Link, useColorModeValue} from "@chakra-ui/react";
 
 const IndexPage = () => {
   return (
@@ -9,7 +9,11 @@ const IndexPage = () => {
           <Input placeholder={"example@mail.com"} variant={"outline"} mb={3} type={"email"}/>
           <Input placeholder={"*******"} variant={"outline"} mb={6} type={"password"}/>
           <Checkbox mb={3} colorScheme={"gray"}>Remember me?</Checkbox>
-          <Button colorScheme={"gray"} mb={3}>Submit</Button>
+          <Button colorScheme={"gray"} mb={3}>
+            <Link href={"/main"}>
+              Submit
+            </Link>
+          </Button>
         </Flex>
       </Box>
     </Flex>    

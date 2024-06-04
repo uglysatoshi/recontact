@@ -24,20 +24,18 @@ const LogoBox = styled.span
 
 const Logo = () => {
     return (
-        (<Link href="/" scroll={false}>
-
+        (<Link href={"/main"} scroll={false}>
             <LogoBox>
                 <ArrowIcon/>
                 <Text
                     color={useColorModeValue('gray.800', 'whiteAlpha.900')}
-                    fontFamily='"M PLUS Rounded 1c", sans-serif'
+                    fontFamily={'"M PLUS Rounded 1c", sans-serif'}
                     fontWeight="bold"
                     ml={1}
                 >
                     recontact
                 </Text>
             </LogoBox>
-
         </Link>)
     );
 }
