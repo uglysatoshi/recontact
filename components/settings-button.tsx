@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { IconButton, useColorModeValue } from '@chakra-ui/react'
+import { IconButton } from '@chakra-ui/react'
 import { SettingsIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/router'
 

@@ -25,6 +25,32 @@ const MainPage = () => {
     const chartColor = useColorModeValue('rgba(0, 0, 0, 1)', 'rgba(255, 255, 255, 1)');
     const chartBackgroundColor = useColorModeValue('rgba(0, 0, 0, 0.2)', 'rgba(255, 255, 255, 0.2)');
 
+    const options = {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top' as const, // Fix here
+            },
+            title: {
+                display: true,
+                text: 'Monthly Revenue',
+                color: chartColor, // Ensure the title color is also dynamic
+            },
+        },
+        scales: {
+            x: {
+                ticks: {
+                    color: chartColor,
+                }
+            },
+            y: {
+                ticks: {
+                    color: chartColor,
+                }
+            }
+        }
+    }
+
     const data = {
         labels: ['January', 'February', 'March', 'April', 'May', 'June'],
         datasets: [
@@ -36,32 +62,6 @@ const MainPage = () => {
                 borderColor: chartColor,
             },
         ],
-    }
-
-    const options = {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'top',
-            },
-            title: {
-                display: true,
-                text: 'Monthly Revenue',
-                color: chartColor,
-            },
-        },
-        scales: {
-            x: {
-                ticks: {
-                    color: chartColor,
-                },
-            },
-            y: {
-                ticks: {
-                    color: chartColor,
-                },
-            },
-        },
     }
 
     return (
