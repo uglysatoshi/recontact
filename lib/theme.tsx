@@ -35,7 +35,7 @@ const colors = {
 
 const config = {
     initialColorMode: 'light',
-    useSystemColorMode: true
+    useSystemColorMode: false
 }
 
 const theme = extendTheme({ config, styles, components, fonts, colors })

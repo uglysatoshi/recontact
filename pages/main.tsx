@@ -29,12 +29,12 @@ const MainPage = () => {
         responsive: true,
         plugins: {
             legend: {
-                position: 'top' as const, // Fix here
+                position: 'top' as const,
             },
             title: {
                 display: true,
                 text: 'Monthly Revenue',
-                color: chartColor, // Ensure the title color is also dynamic
+                color: chartColor,
             },
         },
         scales: {
@@ -66,7 +66,7 @@ const MainPage = () => {
 
     return (
         <Container maxW={"container.xl"} boxShadow={"base"} rounded={10}>
-            <Tabs variant="line" colorScheme="black" p={5}>
+            <Tabs variant="line" colorScheme="black" >
                 <TabList>
                     <Tab>Overview</Tab>
                     <Tab>Recent Sales</Tab>
