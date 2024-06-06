@@ -38,6 +38,7 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
     )
 }
 
+// @ts-ignore
 const MenuLink = forwardRef((props, ref) => (
     <Link href={ref} as={NextLink} {...props} />
 ))
@@ -47,6 +48,7 @@ MenuLink.displayName = 'MenuLink'
 const Navbar = props => {
     const { path } = props
 
+    // @ts-ignore
     return (
         <Box
             display={"flex"}
