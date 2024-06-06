@@ -7,7 +7,7 @@ const SettingsButton = () => {
     const router = useRouter();
 
     const handleClick = () => {
-        router.push('/settings');
+        router.push('/settings').then(r => 404);
     }
 
     return (
@@ -24,6 +24,7 @@ const SettingsButton = () => {
                     variant={"outline"}
                     icon={<SettingsIcon />}
                     onClick={handleClick}
+                    ml={2}
                 ></IconButton>
             </motion.div>
         </AnimatePresence>
