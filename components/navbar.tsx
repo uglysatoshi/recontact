@@ -16,8 +16,8 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
-import { IoLogoGithub, IoConstruct } from 'react-icons/io5'
 import { forwardRef } from 'react'
+import SettingsButton from "./settings-button";
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
     const active = path === href
@@ -93,8 +93,7 @@ const Navbar = props => {
                             alignItems={"center"}
                             style={{gap: 4}}
                         >
-                            <IoConstruct/>
-                            Works
+                            Workspace
                         </LinkItem>
                         <LinkItem
                             target="_blank"
@@ -104,13 +103,13 @@ const Navbar = props => {
                             alignItems="center"
                             style={{ gap: 4 }}
                         >
-                            <IoLogoGithub/>
                             Source
                         </LinkItem>
                     </Stack>
 
                     <Box flex={1} align={"right"}>
-                        <ThemeToggleButton />
+                        <ThemeToggleButton pr={3}/>
+                        <SettingsButton/>
 
                         <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
                             <Menu isLazy id="navbar-menu">
