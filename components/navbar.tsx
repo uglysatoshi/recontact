@@ -1,5 +1,4 @@
 import Logo from './logo'
-import NextLink from 'next/link'
 import {
     Container,
     Box,
@@ -16,8 +15,10 @@ import {
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
-import { forwardRef } from 'react'
+import React, { forwardRef, ForwardedRef } from 'react'
 import SettingsButton from "./settings-button";
+import { Link as ChakraLink, LinkProps as ChakraLinkProps } from '@chakra-ui/react';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
     const active = path === href
@@ -38,17 +39,19 @@ const LinkItem = ({ href, path, target, children, ...props }) => {
     )
 }
 
-// @ts-ignore
-const MenuLink = forwardRef((props, ref) => (
-    <Link href={ref} as={NextLink} {...props} />
-))
+type MenuLinkProps = ChakraLinkProps & NextLinkProps;
 
-MenuLink.displayName = 'MenuLink'
+const MenuLink = forwardRef<HTMLAnchorElement, MenuLinkProps>((props, ref: ForwardedRef<HTMLAnchorElement>) => (
+    <ChakraLink as={NextLink} ref={ref} {...props} />
+));
 
-const Navbar = props => {
+interface NavbarProps {
+    path: string;
+}
+
+const Navbar: React.FC<NavbarProps> = (props) => {
     const { path } = props
 
-    // @ts-ignore
     return (
         <Box
             display={"flex"}
@@ -72,8 +75,8 @@ const Navbar = props => {
                     pb={2}
                     pt={2}
                     maxW="container.xl"
-                    align="center"
-                    justify="space-between"
+                    alignItems="center"
+                    justifyContent="space-between"
                 >
                     <Flex align="center" >
                         <Heading as="h1" size="lg" letterSpacing={'tighter'}>
@@ -90,9 +93,10 @@ const Navbar = props => {
                         <LinkItem
                             href={"/works"}
                             path={path}
+                            target={"_self"}
                             display={"inline-flex"}
                             alignItems={"center"}
-                            style={{gap: 4}}
+                            style={{ gap: 4 }}
                         >
                             Workspace
                         </LinkItem>
@@ -108,9 +112,9 @@ const Navbar = props => {
                         </LinkItem>
                     </Stack>
 
-                    <Box flex={1} align={"right"}>
-                        <ThemeToggleButton pr={3}/>
-                        <SettingsButton/>
+                    <Box flex={1} textAlign="right">
+                        <ThemeToggleButton />
+                        <SettingsButton />
 
                         <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
                             <Menu isLazy id="navbar-menu">
